@@ -17,11 +17,17 @@ def remove_tag(text: str) -> str:
     return re.sub("<p>.*<\/p>", "", text)
 
 
+def format(text: str) -> str:
+    text = text.replace("\n", " ")
+    return text[:200]
+
+
 def create_news(url: str) -> None:
     feed = feedparser.parse(url)
     for entry in feed.entries:
         st.markdown(f"#### [{entry.title}]({entry.link})")
         summary = remove_tag(entry.summary)
+        summary = format(summary)
         st.caption(summary)
 
 
