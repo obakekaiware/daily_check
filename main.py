@@ -1,6 +1,7 @@
 from pathlib import Path
 import re
 import json
+from PIL import Image
 
 import feedparser
 import streamlit as st
@@ -34,7 +35,8 @@ def create_news(url: str) -> None:
 
 
 def main() -> None:
-    st.title("Daily Check")
+    header_image = Image.open("data/header.png")
+    st.image(header_image)
 
     urls_path = Path("data", "urls.json")
     with open(urls_path) as file:
