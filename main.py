@@ -26,9 +26,11 @@ def create_news(url: str) -> None:
     feed = feedparser.parse(url)
     for entry in feed.entries:
         st.markdown(f"#### [{entry.title}]({entry.link})")
-        summary = remove_tag(entry.summary)
-        summary = format(summary)
-        st.caption(summary)
+        summary = getattr(entry, "summary", None)
+        if summary:
+            summary = remove_tag(summary)
+            summary = format(summary)
+            st.caption(summary)
 
 
 def main() -> None:
