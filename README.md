@@ -1,2 +1,2 @@
 # daily_check
-![Daily Check](https://github.com/obakekaiware/daily_check/assets/49265616/d3609a8d-8058-4f20-8d7d-f73b32acba74)
+![Daily Check (1)](https://github.com/obakekaiware/daily_check/assets/49265616/9087b8b7-30d5-4a20-a833-c28c7b11132e)
